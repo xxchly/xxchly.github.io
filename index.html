@@ -24,16 +24,27 @@
   a { color:var(--accent); text-decoration:none; }
   a:hover { text-decoration:underline; }
   .note { color:var(--sub); font-size:14px; }
+  header.me { display:flex; gap:24px; align-items:flex-start; }
+  header.me .txt { flex:1; }
+  header.me img { width:132px; height:176px; object-fit:cover; border-radius:10px;
+                  border:1px solid var(--line); }
+  @media (max-width:520px) { header.me { flex-direction:column; }
+                             header.me img { width:110px; height:147px; } }
 </style>
 </head>
 <body>
 <main>
-  <h1>Luyang Han</h1>
-  <p class="tag">MA in Statistics (Research Specialization), Columbia University ·
-     transportation, causal inference &amp; spatio-temporal statistics<br>
-     <a href="mailto:lh3357@columbia.edu">lh3357@columbia.edu</a> ·
-     <a href="https://github.com/xxchly">GitHub</a> ·
-     <a href="https://www.linkedin.com/in/luyang-han-7b5113346">LinkedIn</a></p>
+  <header class="me">
+    <div class="txt">
+      <h1>Luyang Han</h1>
+      <p class="tag">MA in Statistics (Research Specialization), Columbia University ·
+         transportation, causal inference &amp; spatio-temporal statistics<br>
+         <a href="mailto:lh3357@columbia.edu">lh3357@columbia.edu</a> ·
+         <a href="https://github.com/xxchly">GitHub</a> ·
+         <a href="https://www.linkedin.com/in/luyang-han-7b5113346">LinkedIn</a></p>
+    </div>
+    <img src="files/photo.jpg" alt="Luyang Han">
+  </header>
 
   <h2>Publication</h2>
   <ul>
