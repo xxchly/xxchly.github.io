@@ -4,76 +4,180 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Luyang Han</title>
+<meta name="description" content="Luyang Han — MA in Statistics, Columbia University. Statistical and probabilistic methods for urban transportation.">
 <style>
-  :root { --ink:#1c2530; --sub:#5a6472; --accent:#1f5fbf; --line:#e3e6ea; --bg:#ffffff; }
+  :root { --ink:#1c2530; --sub:#5a6472; --accent:#1f5fbf; --line:#e3e6ea; --bg:#ffffff; --card:#ffffff; }
   @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) { --ink:#e8eaee; --sub:#9aa4b1; --accent:#7aa7e8; --line:#2a3340; --bg:#12161c; }
+    :root:not([data-theme="light"]) { --ink:#e8eaee; --sub:#9aa4b1; --accent:#7aa7e8; --line:#2a3340; --bg:#12161c; --card:#f4f5f7; }
   }
-  :root[data-theme="dark"] { --ink:#e8eaee; --sub:#9aa4b1; --accent:#7aa7e8; --line:#2a3340; --bg:#12161c; }
+  :root[data-theme="dark"] { --ink:#e8eaee; --sub:#9aa4b1; --accent:#7aa7e8; --line:#2a3340; --bg:#12161c; --card:#f4f5f7; }
   * { box-sizing: border-box; }
   body { margin:0; background:var(--bg); color:var(--ink);
-         font:17px/1.65 Georgia, "Times New Roman", serif; }
-  main { max-width:680px; margin:0 auto; padding:56px 16px 80px; }
+         font:17px/1.6 Georgia, "Times New Roman", serif; }
+  main { max-width:760px; margin:0 auto; padding:56px 16px 72px; }
   h1 { font-size:34px; margin:0 0 4px; letter-spacing:.3px; }
-  .tag { color:var(--sub); margin:0 0 28px; }
+  .tag { color:var(--sub); margin:0 0 10px; }
+  .links { margin:0; }
   h2 { font-size:15px; text-transform:uppercase; letter-spacing:1.6px;
        color:var(--sub); border-bottom:1px solid var(--line);
-       padding-bottom:6px; margin:36px 0 14px; }
+       padding-bottom:6px; margin:40px 0 16px; }
   ul { margin:0; padding-left:20px; }
-  li { margin-bottom:10px; }
+  li { margin-bottom:8px; }
   a { color:var(--accent); text-decoration:none; }
   a:hover { text-decoration:underline; }
-  .note { color:var(--sub); font-size:14px; }
-  header.me { display:flex; gap:24px; align-items:flex-start; }
+  .sub { color:var(--sub); font-size:14px; }
+  .sep { color:var(--sub); padding:0 4px; }
+
+  header.me { display:flex; gap:28px; align-items:flex-start; }
   header.me .txt { flex:1; }
   header.me img { width:132px; height:176px; object-fit:cover; border-radius:10px;
                   border:1px solid var(--line); }
-  @media (max-width:520px) { header.me { flex-direction:column; }
-                             header.me img { width:110px; height:147px; } }
+
+  .news { list-style:none; padding:0; }
+  .news li { display:flex; gap:14px; }
+  .news .d { color:var(--sub); font-size:14px; min-width:72px; padding-top:2px; }
+
+  .item { display:flex; gap:20px; margin-bottom:26px; }
+  .item .thumb { flex:0 0 190px; }
+  .item .thumb a { display:block; }
+  .item .thumb img { width:190px; height:142px; object-fit:contain; background:var(--card);
+                     border:1px solid var(--line); border-radius:6px; display:block; }
+  .item .thumb .cap { font-size:12px; color:var(--sub); margin-top:4px; line-height:1.35; }
+  .item .body { flex:1; min-width:0; }
+  .item .title { font-weight:bold; }
+  .item .meta { color:var(--sub); font-size:14px; margin:2px 0 6px; }
+  .item p { margin:0 0 6px; }
+  .item .lk a { font-size:15px; margin-right:12px; }
+
+  footer { margin-top:48px; color:var(--sub); font-size:13px; }
+
+  @media (max-width:560px) {
+    header.me { flex-direction:column-reverse; gap:16px; }
+    header.me img { width:110px; height:147px; }
+    .item { flex-direction:column; gap:10px; }
+    .item .thumb, .item .thumb img { width:100%; flex-basis:auto; }
+    .item .thumb img { height:auto; max-height:260px; }
+  }
 </style>
 </head>
 <body>
 <main>
+
   <header class="me">
     <div class="txt">
       <h1>Luyang Han</h1>
-      <p class="tag">MA in Statistics (Research Specialization), Columbia University ·
-         transportation, causal inference &amp; spatio-temporal statistics<br>
-         <a href="mailto:lh3357@columbia.edu">lh3357@columbia.edu</a> ·
-         <a href="https://github.com/xxchly">GitHub</a> ·
-         <a href="https://www.linkedin.com/in/luyang-han-7b5113346">LinkedIn</a></p>
+      <p class="tag">MA in Statistics (Machine Learning track), Research Specialization<br>
+         <span class="sub">Columbia University · 2025 – 2027 (expected)</span><br>
+         Bachelor of Science (Honours) in Financial Mathematics<br>
+         <span class="sub">University of Liverpool &amp; Xi'an Jiaotong-Liverpool University · 2021 – 2025</span><br>
+         Applying for PhD programs, Fall 2027</p>
+      <p class="links">
+        <a href="mailto:luyang.han20030307@gmail.com">Email</a><span class="sep">·</span>
+        <a href="files/CV_LuyangHan.pdf">CV</a><span class="sep">·</span>
+        <a href="https://github.com/xxchly">GitHub</a>
+      </p>
     </div>
     <img src="files/photo.jpg" alt="Luyang Han">
   </header>
 
+  <h2>About</h2>
+  <p>I am an MA student in Statistics at Columbia University. My research interest lies in extracting
+     systematic structure from noisy, irregular transportation data, and in combining that structure with
+     causal inference to draw insights that matter for real transportation policy. To pursue this direction,
+     I am now deepening both the statistical foundations and the transportation domain knowledge it requires,
+     and I am applying to PhD programs for Fall 2027.</p>
+
+  <h2>Research Interests</h2>
+  <p>Probabilistic Machine Learning for Origin–Destination (OD) Data<span class="sep">·</span>Causal
+     Inference for Transportation Policy<span class="sep">·</span>Spatio-Temporal Mobility Modeling</p>
+
+  <h2>News</h2>
+  <ul class="news">
+    <li><span class="d">Sep 2026</span><span>Paper on NYC congestion pricing accepted for presentation at the
+        TRB 2027 Annual Meeting.</span></li>
+    <li><span class="d">Sep 2025</span><span>Started the MA in Statistics (Machine Learning track, Research
+        Specialization) at Columbia University.</span></li>
+    <li><span class="d">Jul 2025</span><span>Graduated with First-Class Honours in Financial Mathematics from the
+        University of Liverpool and Xi'an Jiaotong-Liverpool University.</span></li>
+  </ul>
+
   <h2>Publication</h2>
-  <ul>
-    <li>Han, L., &amp; Di, X. <i>Cross-Classified Random-Effects Difference-in-Differences Model:
-        A Case Study for New York City's Congestion Pricing.</i>
-        TRB Annual Meeting 2027 (accepted for presentation; recommended for publication
-        consideration in <i>Transportation Research Record</i>).
-        <a href="files/TRB2027_Han_Di_CCRE-DiD.pdf">[PDF]</a></li>
-  </ul>
+  <div class="item">
+    <div class="body">
+      <div><b>Han, L.</b>, &amp; Di, X. <i>Cross-Classified Random-Effects Difference-in-Differences Model:
+        A Case Study for New York City's Congestion Pricing.</i></div>
+      <div class="meta">TRB Annual Meeting 2027 (accepted for presentation; under review at
+        <i>Transportation Research Record</i>)</div>
+      <div class="lk"><a href="files/TRB2027_Han_Di_CCRE-DiD.pdf">[PDF]</a></div>
+    </div>
+  </div>
 
-  <h2>Projects</h2>
-  <ul>
-    <li><a href="https://github.com/xxchly/Cross-Scale-Flow-Clustering-of-NYC-Multi-Modal-Commuting-Structure">Cross-scale flow clustering of NYC multi-modal commuting structure</a>
-        — significant OD flow clusters and reciprocal AM/PM commuting pairs across Subway,
-        FHVHV, Yellow Taxi and Citi Bike</li>
-    <li><a href="https://xxchly.github.io/nyc-bus-speed-map/">Manhattan bus speed animation</a>
-        — road-level speeds from MTA GTFS-Realtime + static GTFS
-        (<a href="https://github.com/xxchly/nyc-bus-speed-map">code</a>)</li>
-  </ul>
+  <h2>Research</h2>
 
-  <h2>Documents</h2>
-  <ul>
-    <li><a href="files/FYP_Thesis_LuyangHan.pdf">BSc thesis</a> —
-        <i>Goodness-of-Fit Test for Conditional Moment Restriction Models</i>,
-        XJTLU, May 2025 <span class="note">(PDF)</span></li>
-    <li><a href="files/SURF_Poster_LuyangHan.jpg">SURF poster</a> —
-        <i>Portfolio Optimization Based on GH Distributions with Mean-CVaR-Skewness
-        Analysis</i>, XJTLU SURF 2024 <span class="note">(JPG)</span></li>
-  </ul>
+  <div class="item">
+    <div class="thumb">
+      <a href="files/figs/crossscale_subway_top10.jpg"><img src="files/figs/crossscale_subway_top10.jpg"
+         alt="Top 10 significant subway flow clusters in the NYC morning peak"></a>
+      <div class="cap">Example output: top-10 significant subway flow clusters, AM peak</div>
+    </div>
+    <div class="body">
+      <div class="title">Uncovering Significant Cross-Scale Flow Clusters in NYC Multimodal OD Data</div>
+      <div class="meta">Columbia University · Jul 2026 – Present · Advisor: Prof. Xuan Sharon Di</div>
+      <p>Detecting significant OD flow clusters across NYC's travel modes, from scan statistics to Bayesian
+        models.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="thumb">
+      <a href="files/figs/congestion_fig4_flow_effects.jpg"><img src="files/figs/congestion_fig4_flow_effects.jpg"
+         alt="Treatment effect per flow on the ring cordon (Figure 4 of the paper)"></a>
+      <div class="cap">Figure 4: treatment effect per flow</div>
+    </div>
+    <div class="body">
+      <div class="title">NYC Congestion Pricing Evaluation</div>
+      <div class="meta">Columbia University · Nov 2025 – Aug 2026 · Advisor: Prof. Xuan Sharon Di</div>
+      <p>First-year causal effect of congestion pricing on five travel modes, estimated by difference-in-differences.</p>
+      <div class="lk"><a href="files/TRB2027_Han_Di_CCRE-DiD.pdf">[Paper]</a></div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="thumb">
+      <a href="https://xxchly.github.io/nyc-bus-speed-map/"><img src="files/figs/bus_speed_manhattan.jpg"
+         alt="Road-segment bus speeds in Manhattan"></a>
+    </div>
+    <div class="body">
+      <div class="title">Road-Segment Bus Speed Estimation from Real-Time and Static GTFS Data</div>
+      <div class="meta">Columbia University · Apr 2026 · Independent Project</div>
+      <p>Minute-level, road-segment bus speeds across NYC from real-time vehicle location feeds.</p>
+      <div class="lk"><a href="https://xxchly.github.io/nyc-bus-speed-map/">[Visualization]</a><a
+        href="https://github.com/xxchly/nyc-bus-speed-map">[Code]</a></div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="body">
+      <div class="title">Goodness-of-Fit Tests for Conditional Moment Models in Reproducing Kernel Hilbert
+        Space (RKHS)</div>
+      <div class="meta">XJTLU, Final Year Project · Oct 2024 – May 2025 · Advisor: Dr. Yuhao Li</div>
+      <p>Kernel-based specification tests for regression models, robust to parameter estimation.</p>
+      <div class="lk"><a href="files/FYP_Thesis_LuyangHan.pdf">[Thesis]</a></div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="body">
+      <div class="title">Mean-CVaR-Skewness Portfolio Optimization under the Generalized Hyperbolic
+        Distribution</div>
+      <div class="meta">XJTLU, Summer Undergraduate Research Fellowship · May 2024 – Jul 2024 · Advisor:
+        Dr. Arodh Lal Karn</div>
+      <p>Portfolio optimization controlling tail risk and skewness under heavy-tailed returns.</p>
+      <div class="lk"><a href="files/SURF_Poster_LuyangHan.jpg">[Poster]</a></div>
+    </div>
+  </div>
+
+  <footer>Last updated: October 2026</footer>
 </main>
 </body>
 </html>
