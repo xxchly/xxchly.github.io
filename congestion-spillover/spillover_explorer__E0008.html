@@ -106,8 +106,6 @@
     <div class="row seg" id="scope" role="group" aria-label="Flows shown in pattern A"></div></div>
     <div class="optl">2. Peak window</div>
     <div class="row seg" id="peaks" role="group" aria-label="Peak window"></div>
-    <div class="optl">3. Map view</div>
-    <div class="row seg" id="view" role="group" aria-label="Map view"></div>
     <div style="margin-bottom:8px"><div id="grpl" class="optl"></div><div class="dd" id="grp"></div></div>
     <div style="margin-bottom:10px"><div id="flowl" class="optl"></div><div class="dd" id="flow"></div></div>
     <div id="summary"></div>
@@ -129,11 +127,11 @@ const STOPS = ["#6e1414", "#a82a2a", "#e34948", "#f2a7a6", null, "#b7d3f6", "#55
 const LIN = 0.02, VMAX = 2.0;
 const LW_PX = 1.6;   // every flow line has the same width (screen pixels, at any zoom)
 const PEAKS = [["am_peak", "Morning"], ["pm_peak", "Evening"], ["off_peak", "Off-peak"]];
-let peak = "off_peak", view = "city", mode = "j", scope = "all";   // the map opens on the whole city, in the tolled-flow view
+let peak = "off_peak", mode = "j", scope = "all";   // the map always shows the whole city; it opens in the tolled-flow view
 const cur = {j: DATA.default_j, i: DATA.default_i};   // the selected flow of each view
 const MODES = {
   j: {button: "A · Tolled flow j → all flows", list: DATA.treated, info: DATA.treated_info, recs: () => DATA.peaks[peak],
-      grp: "4. Treated OD group", flow: "5. Treated flow j (sorted by 2024 riders)",
+      grp: "3. Treated OD group", flow: "4. Treated flow j (sorted by 2024 riders)",
       desc: "A: the change that tolling the selected treated flow j alone brings to every other flow.",
       toph: "Most affected flows", topc: "Flow i",
       keyTitle: "Pattern A: the selected treated flow j and the flows it affects",
@@ -146,7 +144,7 @@ const MODES = {
         `<div class="kv"><b>${DATA.labels[sel]}</b> (${DATA.groups[sel]}), 2024 riders per weekday: ${DATA.treated_info[sel].r.toFixed(0)}</div>` +
         `<div class="kv">Change of flow j brought by the policy: <b>${ci(rec.R)}%</b></div>`},
   i: {button: "B · Control flow i ← tolled flows j", list: DATA.control, info: DATA.control_info, recs: () => DATA.ipeaks[peak],
-      grp: "4. Control OD group", flow: "5. Control flow i (sorted by 2024 riders)",
+      grp: "3. Control OD group", flow: "4. Control flow i (sorted by 2024 riders)",
       desc: "B: the change the policy brings to the selected control flow i (its spillover), and how it is made up of the treated flows j.",
       toph: "Largest contributions", topc: "Treated flow j",
       keyTitle: "Pattern B: the selected control flow i and the treated flows behind its change",
@@ -313,9 +311,8 @@ function renderKey() {
 }
 function draw() {
   gNodes.replaceChildren(); gSel.replaceChildren();
-  const md = M(), sel = cur[mode], rec = viewRec(md.recs()[sel]), fj = DATA.flows[sel];
+  const md = M(), sel = cur[mode], rec = viewRec(md.recs()[sel]);
   curRec = rec;
-  if (view === "fit") fit(rec, fj); else svg.setAttribute("viewBox", DATA.viewbox.join(" "));   // first: sizes follow the view
   drawFlows();
   // the selected flow: the colour of its change under the whole policy (R(j) for a tolled j, R(i) for a control i) inside a dark outline, with an arrowhead
   const own = md.own(rec), cj = color(own[0]), edge = css("--sel"), ap = arrowPath(sel, 16, 7, 10);
@@ -334,16 +331,6 @@ function draw() {
   document.getElementById("summary").innerHTML = md.summary(rec, sel);
   table(rec);
   renderKey();
-}
-function fit(rec, fj) {   // zoom to the drawn flows (at least 320 units wide), keeping the map's aspect ratio
-  const ids = new Set([fj[0], fj[1]]);
-  rec.f.forEach(k => { ids.add(DATA.flows[k][0]); ids.add(DATA.flows[k][1]); });
-  const xs = [...ids].map(k => DATA.pts[k][0]), ys = [...ids].map(k => DATA.pts[k][1]);
-  const [, , VW, VH] = DATA.viewbox, asp = VH / VW;
-  let w = Math.max(Math.max(...xs) - Math.min(...xs) + 120, 320), h = Math.max(Math.max(...ys) - Math.min(...ys) + 120, 320 * asp);
-  if (h / w > asp) w = h / asp; else h = w * asp;
-  const cx = (Math.max(...xs) + Math.min(...xs)) / 2, cy = (Math.max(...ys) + Math.min(...ys)) / 2;
-  svg.setAttribute("viewBox", [cx - w / 2, cy - h / 2, w, h].map(v => v.toFixed(1)).join(" "));
 }
 function ci(a) { return `${fmt(a[0])} [${fmt(a[1])}, ${fmt(a[2])}]`; }
 function byMagnitude(rec) { return rec.f.map((_, k) => k).sort((a, b) => Math.abs(rec.e[b]) - Math.abs(rec.e[a])); }
@@ -365,10 +352,6 @@ const tbtn = document.getElementById("tickbtns");
 const pk = document.getElementById("peaks");
 PEAKS.forEach(([k, lab]) => { const b = document.createElement("button"); b.textContent = lab; b.setAttribute("aria-pressed", k === peak);
   b.onclick = () => { peak = k; ticked.clear(); [...pk.children].forEach(x => x.setAttribute("aria-pressed", x === b)); draw(); }; pk.appendChild(b); });
-const vw = document.getElementById("view");
-[["city", "Whole city"], ["fit", "Zoom to flows"]].forEach(([k, lab]) => { const b = document.createElement("button");
-  b.textContent = lab; b.setAttribute("aria-pressed", k === view);
-  b.onclick = () => { view = k; [...vw.children].forEach(x => x.setAttribute("aria-pressed", x === b)); draw(); }; vw.appendChild(b); });
 function makeDropdown(root, labelId, onPick, onHover) {
   root.innerHTML = `<button type="button" class="dd-btn" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="${labelId}"></button>` +
                    `<div class="dd-list" role="listbox" tabindex="-1" aria-labelledby="${labelId}" hidden></div>`;
