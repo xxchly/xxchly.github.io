@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Working Experience · Luyang Han</title>
+<meta name="description" content="Luyang Han — MA in Statistics, Columbia University. Statistical and probabilistic methods for urban transportation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#1c2530; --sub:#5a6472; --accent:#1f5fbf; --line:#e3e6ea; --bg:#ffffff; --card:#ffffff; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --ink:#e8eaee; --sub:#9aa4b1; --accent:#7aa7e8; --line:#2a3340; --bg:#12161c; --card:#f4f5f7; }
+  }
+  :root[data-theme="dark"] { --ink:#e8eaee; --sub:#9aa4b1; --accent:#7aa7e8; --line:#2a3340; --bg:#12161c; --card:#f4f5f7; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink);
+         font:16px/1.65 Lato, "Helvetica Neue", Arial, sans-serif; }
+  main { max-width:780px; margin:0 auto; padding:8px 16px 72px; }
+  h1 { font-size:40px; font-weight:300; margin:0 0 10px; letter-spacing:2px; }
+  .tag { color:var(--sub); margin:0 0 10px; }
+  .links { margin:0; }
+  h2 { font-size:15px; text-transform:uppercase; letter-spacing:1.6px;
+       color:var(--sub); border-bottom:1px solid var(--line);
+       padding-bottom:6px; margin:40px 0 16px; }
+  ul { margin:0; padding-left:20px; }
+  li { margin-bottom:8px; }
+  a { color:var(--accent); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+  .sub { color:var(--sub); font-size:14px; }
+  .sep { color:var(--sub); padding:0 4px; }
+
+  header.me { display:flex; gap:28px; align-items:flex-start; }
+  header.me .txt { flex:1; }
+  header.me img { width:132px; height:176px; object-fit:cover; border-radius:10px;
+                  border:1px solid var(--line); }
+
+  .news { list-style:none; padding:0; }
+  .news li { display:flex; gap:14px; }
+  .news .d { color:var(--sub); font-size:14px; min-width:72px; padding-top:2px; }
+
+  .item { display:flex; gap:20px; margin-bottom:26px; }
+  .item .thumb { flex:0 0 190px; }
+  .item .thumb a { display:block; }
+  .item .thumb img { width:190px; height:142px; object-fit:contain; background:var(--card);
+                     border:1px solid var(--line); border-radius:6px; display:block; }
+  .item .thumb .cap { font-size:12px; color:var(--sub); margin-top:4px; line-height:1.35; }
+  .item .body { flex:1; min-width:0; }
+  .item .title { font-weight:bold; }
+  .item .meta { color:var(--sub); font-size:14px; margin:2px 0 6px; }
+  .item p { margin:0 0 6px; }
+  .item .lk a { font-size:15px; margin-right:12px; }
+
+  footer { margin-top:48px; color:var(--sub); font-size:13px; }
+
+  @media (max-width:560px) {
+    header.me { flex-direction:column-reverse; gap:16px; }
+    header.me img { width:110px; height:147px; }
+    .item { flex-direction:column; gap:10px; }
+    .item .thumb, .item .thumb img { width:100%; flex-basis:auto; }
+    .item .thumb img { height:auto; max-height:260px; }
+  }
+  .nav { margin:0 0 28px; font-size:15px; }
+  .nav a { margin-right:14px; }
+  .nav .cur { color:var(--ink); font-weight:bold; margin-right:14px; }
+  .cards { display:flex; gap:16px; flex-wrap:wrap; }
+  .cards a { flex:1 1 220px; display:block; border:1px solid var(--line); border-radius:8px;
+             padding:14px 16px; color:var(--ink); }
+  .cards a:hover { border-color:var(--accent); text-decoration:none; }
+  .cards .t { font-weight:bold; color:var(--accent); }
+  .cards .d { font-size:14px; color:var(--sub); margin-top:4px; }
+  .topbar { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px 18px;
+            padding:14px 0 12px; border-bottom:1px solid var(--line); margin:0 0 36px; }
+  .topbar .brand { font-size:19px; font-weight:300; letter-spacing:1px; color:var(--ink); }
+  .topbar nav a { margin-left:18px; font-size:15px; color:var(--ink); }
+  .topbar nav a:first-child { margin-left:0; }
+  .topbar nav a.cur { font-weight:700; }
+  .topbar nav a:hover { color:var(--accent); text-decoration:none; }
+  h3 { font-size:15px; font-weight:700; color:var(--ink); margin:22px 0 12px; letter-spacing:.3px; }
+</style>
+</head>
+<body>
+<main>
+
+  <div class="topbar"><a class="brand" href="index.html">Luyang Han</a><nav><a href="index.html">Home</a><a href="research.html">Research</a><a href="projects.html">Projects</a><a href="working.html" class="cur">Working</a><a href="files/CV_LuyangHan.pdf?v=3">CV</a></nav></div>
+
+  <h2>Working Experience</h2>
+
+  <div class="item">
+    <div class="body">
+      <div class="title">Grader</div>
+      <div class="meta">Department of Statistics, Columbia University · Feb 2026 – Present</div>
+      <p>Courses: STAT GR5264 Stochastic Processes – Applications I (graduate) and STAT GU4001 Introduction to
+        Probability and Statistics. Graded assignments and exams for proof-based and applied coursework, and
+        coordinated with instructors on grading standards and rubric consistency.</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="body">
+      <div class="title">Intern</div>
+      <div class="meta">Business Department, Bank of China · Jul 2022 – Aug 2022</div>
+      <p>Used SQL to analyze customer transaction records, screening high-risk transactions and flagging potential
+        money-laundering activity.</p>
+    </div>
+  </div>
+
+  <footer>Last updated: November 2026</footer>
+</main>
+</body>
+</html>
