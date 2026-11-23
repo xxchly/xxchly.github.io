@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project Experience · Luyang Han</title>
+<meta name="description" content="Luyang Han — MA in Statistics, Columbia University. Statistical and probabilistic methods for urban transportation.">
+<style>
+  :root { --ink:#1c2530; --sub:#5a6472; --accent:#1f5fbf; --line:#e3e6ea; --bg:#ffffff; --card:#ffffff; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --ink:#e8eaee; --sub:#9aa4b1; --accent:#7aa7e8; --line:#2a3340; --bg:#12161c; --card:#f4f5f7; }
+  }
+  :root[data-theme="dark"] { --ink:#e8eaee; --sub:#9aa4b1; --accent:#7aa7e8; --line:#2a3340; --bg:#12161c; --card:#f4f5f7; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink);
+         font:17px/1.6 Georgia, "Times New Roman", serif; }
+  main { max-width:760px; margin:0 auto; padding:56px 16px 72px; }
+  h1 { font-size:34px; margin:0 0 4px; letter-spacing:.3px; }
+  .tag { color:var(--sub); margin:0 0 10px; }
+  .links { margin:0; }
+  h2 { font-size:15px; text-transform:uppercase; letter-spacing:1.6px;
+       color:var(--sub); border-bottom:1px solid var(--line);
+       padding-bottom:6px; margin:40px 0 16px; }
+  ul { margin:0; padding-left:20px; }
+  li { margin-bottom:8px; }
+  a { color:var(--accent); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+  .sub { color:var(--sub); font-size:14px; }
+  .sep { color:var(--sub); padding:0 4px; }
+
+  header.me { display:flex; gap:28px; align-items:flex-start; }
+  header.me .txt { flex:1; }
+  header.me img { width:132px; height:176px; object-fit:cover; border-radius:10px;
+                  border:1px solid var(--line); }
+
+  .news { list-style:none; padding:0; }
+  .news li { display:flex; gap:14px; }
+  .news .d { color:var(--sub); font-size:14px; min-width:72px; padding-top:2px; }
+
+  .item { display:flex; gap:20px; margin-bottom:26px; }
+  .item .thumb { flex:0 0 190px; }
+  .item .thumb a { display:block; }
+  .item .thumb img { width:190px; height:142px; object-fit:contain; background:var(--card);
+                     border:1px solid var(--line); border-radius:6px; display:block; }
+  .item .thumb .cap { font-size:12px; color:var(--sub); margin-top:4px; line-height:1.35; }
+  .item .body { flex:1; min-width:0; }
+  .item .title { font-weight:bold; }
+  .item .meta { color:var(--sub); font-size:14px; margin:2px 0 6px; }
+  .item p { margin:0 0 6px; }
+  .item .lk a { font-size:15px; margin-right:12px; }
+
+  footer { margin-top:48px; color:var(--sub); font-size:13px; }
+
+  @media (max-width:560px) {
+    header.me { flex-direction:column-reverse; gap:16px; }
+    header.me img { width:110px; height:147px; }
+    .item { flex-direction:column; gap:10px; }
+    .item .thumb, .item .thumb img { width:100%; flex-basis:auto; }
+    .item .thumb img { height:auto; max-height:260px; }
+  }
+  .nav { margin:0 0 28px; font-size:15px; }
+  .nav a { margin-right:14px; }
+  .nav .cur { color:var(--ink); font-weight:bold; margin-right:14px; }
+  .cards { display:flex; gap:16px; flex-wrap:wrap; }
+  .cards a { flex:1 1 220px; display:block; border:1px solid var(--line); border-radius:8px;
+             padding:14px 16px; color:var(--ink); }
+  .cards a:hover { border-color:var(--accent); text-decoration:none; }
+  .cards .t { font-weight:bold; color:var(--accent); }
+  .cards .d { font-size:14px; color:var(--sub); margin-top:4px; }
+</style>
+</head>
+<body>
+<main>
+
+  <p class="nav"><a href="index.html">Home</a><a href="research.html">Research Experience</a><span class="cur">Project Experience</span></p>
+
+  <h2>Project Experience</h2>
+
+  <div class="item">
+    <div class="thumb">
+      <a href="https://xxchly.github.io/us-crash-data-atlas/"><img src="files/figs/crash_atlas_map.jpg"
+         alt="Map of US traffic-crash datasets by state"></a>
+      <div class="cap">Screenshot of the interactive map</div>
+    </div>
+    <div class="body">
+      <div class="title">US Crash Data Atlas: Inventory of Record-Level Traffic Crash Datasets</div>
+      <div class="meta">Columbia University · Nov 2026</div>
+      <p>An interactive map of 3,125 US traffic-crash datasets, with coordinate coverage and time granularity
+        verified year by year.</p>
+      <div class="lk"><a href="https://xxchly.github.io/us-crash-data-atlas/">[Interactive Map]</a></div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="thumb">
+      <a href="https://xxchly.github.io/nyc-bus-speed-map/"><img src="files/figs/bus_speed_manhattan.jpg"
+         alt="Road-segment bus speeds in Manhattan"></a>
+      <div class="cap">Screenshot of visualization</div>
+    </div>
+    <div class="body">
+      <div class="title">Road-Segment Bus Speed Estimation from Real-Time and Static GTFS Data</div>
+      <div class="meta">Columbia University · Apr 2026 · Independent Project</div>
+      <p>Minute-level, road-segment bus speeds across NYC from real-time vehicle location feeds.</p>
+      <div class="lk"><a href="https://xxchly.github.io/nyc-bus-speed-map/">[Visualization]</a><a
+        href="https://github.com/xxchly/nyc-bus-speed-map">[Code]</a></div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="thumb">
+      <a href="files/figs/surf_cvar_skewness_surfaces.jpg"><img src="files/figs/surf_cvar_skewness_surfaces.jpg"
+         alt="Portfolio skewness and CVaR as functions of portfolio weights"></a>
+      <div class="cap">Optimization problem; skewness and CVaR across portfolio weights</div>
+    </div>
+    <div class="body">
+      <div class="title">Mean-CVaR-Skewness Portfolio Optimization under the Generalized Hyperbolic
+        Distribution</div>
+      <div class="meta">XJTLU, Summer Undergraduate Research Fellowship · May 2024 – Jul 2024</div>
+      <p>Portfolio optimization controlling tail risk and skewness under heavy-tailed returns.</p>
+      <div class="lk"><a href="files/SURF_Poster_LuyangHan.jpg">[Poster]</a></div>
+    </div>
+  </div>
+
+  <footer>Last updated: November 2026</footer>
+</main>
+</body>
+</html>

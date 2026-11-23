@@ -58,6 +58,15 @@
     .item .thumb, .item .thumb img { width:100%; flex-basis:auto; }
     .item .thumb img { height:auto; max-height:260px; }
   }
+  .nav { margin:0 0 28px; font-size:15px; }
+  .nav a { margin-right:14px; }
+  .nav .cur { color:var(--ink); font-weight:bold; margin-right:14px; }
+  .cards { display:flex; gap:16px; flex-wrap:wrap; }
+  .cards a { flex:1 1 220px; display:block; border:1px solid var(--line); border-radius:8px;
+             padding:14px 16px; color:var(--ink); }
+  .cards a:hover { border-color:var(--accent); text-decoration:none; }
+  .cards .t { font-weight:bold; color:var(--accent); }
+  .cards .d { font-size:14px; color:var(--sub); margin-top:4px; }
 </style>
 </head>
 <body>
@@ -100,110 +109,12 @@
     </div>
   </div>
 
-  <h2>Research Experience</h2>
-
-  <div class="item">
-    <div class="thumb">
-      <a href="files/figs/spillover_ridehail_offpeak.jpg"><img src="files/figs/spillover_ridehail_offpeak.jpg"
-         alt="Estimated change in ride-hailing rides by NYC district, off-peak"></a>
-      <div class="cap">Preliminary: change in ride-hailing rides by district, off-peak (red: fewer rides)</div>
-    </div>
-    <div class="body">
-      <div class="title">Spatial Spillovers of NYC Congestion Pricing on Untolled OD Flows</div>
-      <div class="meta">Columbia University · Oct 2026 – Present</div>
-      <p>Separating the toll's direct effect on tolled OD flows from its spillover onto untolled flows for four
-        modes, with a multilevel Bayesian spatial Durbin difference-in-differences model.</p>
-    </div>
-  </div>
-
-  <div class="item">
-    <div class="thumb">
-      <a href="files/figs/crossscale_subway_top10.jpg"><img src="files/figs/crossscale_subway_top10.jpg"
-         alt="Top 10 significant subway flow clusters in the NYC morning peak"></a>
-      <div class="cap">Example output: top-10 significant subway flow clusters, AM peak</div>
-    </div>
-    <div class="body">
-      <div class="title">Detecting Systematic Cross-Scale Flow Clusters in NYC Ride-Hailing OD Data</div>
-      <div class="meta">Columbia University · Jul 2026 – Present</div>
-      <p>Finding OD flow clusters that carry systematic travel in NYC ride-hailing trips, with a Bayesian
-        Poisson&ndash;Gamma model benchmarked against scan statistics.</p>
-    </div>
-  </div>
-
-  <div class="item">
-    <div class="thumb">
-      <a href="files/figs/congestion_fig4_flow_effects.jpg"><img src="files/figs/congestion_fig4_flow_effects.jpg"
-         alt="Treatment effect per flow on the ring cordon (Figure 4 of the paper)"></a>
-      <div class="cap">Figure 4: treatment effect per flow</div>
-    </div>
-    <div class="body">
-      <div class="title">NYC Congestion Pricing Evaluation</div>
-      <div class="meta">Columbia University · Nov 2025 – Aug 2026</div>
-      <p>First-year causal effect of congestion pricing on five travel modes, estimated under a multilevel
-        difference-in-differences framework.</p>
-    </div>
-  </div>
-
-  <div class="item">
-    <div class="thumb">
-      <a href="files/figs/surf_cvar_skewness_surfaces.jpg"><img src="files/figs/surf_cvar_skewness_surfaces.jpg"
-         alt="Portfolio skewness and CVaR as functions of portfolio weights"></a>
-      <div class="cap">Optimization problem; skewness and CVaR across portfolio weights</div>
-    </div>
-    <div class="body">
-      <div class="title">Mean-CVaR-Skewness Portfolio Optimization under the Generalized Hyperbolic
-        Distribution</div>
-      <div class="meta">XJTLU, Summer Undergraduate Research Fellowship · May 2024 – Jul 2024</div>
-      <p>Portfolio optimization controlling tail risk and skewness under heavy-tailed returns.</p>
-      <div class="lk"><a href="files/SURF_Poster_LuyangHan.jpg">[Poster]</a></div>
-    </div>
-  </div>
-
-  <h2>Project Experience</h2>
-
-  <div class="item">
-    <div class="thumb">
-      <a href="https://xxchly.github.io/us-crash-data-atlas/"><img src="files/figs/crash_atlas_map.jpg"
-         alt="Map of US traffic-crash datasets by state"></a>
-      <div class="cap">Screenshot of the interactive map</div>
-    </div>
-    <div class="body">
-      <div class="title">US Crash Data Atlas: Inventory of Record-Level Traffic Crash Datasets</div>
-      <div class="meta">Columbia University · Nov 2026</div>
-      <p>An interactive map of 3,125 US traffic-crash datasets, with coordinate coverage and time granularity
-        verified year by year.</p>
-      <div class="lk"><a href="https://xxchly.github.io/us-crash-data-atlas/">[Interactive Map]</a></div>
-    </div>
-  </div>
-
-  <div class="item">
-    <div class="thumb">
-      <a href="https://xxchly.github.io/nyc-bus-speed-map/"><img src="files/figs/bus_speed_manhattan.jpg"
-         alt="Road-segment bus speeds in Manhattan"></a>
-      <div class="cap">Screenshot of visualization</div>
-    </div>
-    <div class="body">
-      <div class="title">Road-Segment Bus Speed Estimation from Real-Time and Static GTFS Data</div>
-      <div class="meta">Columbia University · Apr 2026 · Independent Project</div>
-      <p>Minute-level, road-segment bus speeds across NYC from real-time vehicle location feeds.</p>
-      <div class="lk"><a href="https://xxchly.github.io/nyc-bus-speed-map/">[Visualization]</a><a
-        href="https://github.com/xxchly/nyc-bus-speed-map">[Code]</a></div>
-    </div>
-  </div>
-
-  <div class="item">
-    <div class="thumb">
-      <a href="files/figs/rkhs_flowchart.png"><img src="files/figs/rkhs_flowchart.png"
-         alt="Flowchart of the kernel-based goodness-of-fit test procedure"></a>
-      <div class="cap">Test procedure</div>
-    </div>
-    <div class="body">
-      <div class="title">Goodness-of-Fit Tests for Conditional Moment Models in Reproducing Kernel Hilbert
-        Space (RKHS)</div>
-      <div class="meta">XJTLU, Final Year Project · Oct 2024 – May 2025</div>
-      <p>Kernel-based specification tests for regression models, robust to parameter estimation.</p>
-      <div class="lk"><a href="files/FYP_Thesis_LuyangHan.pdf">[Thesis]</a></div>
-    </div>
+  <h2>Experience</h2>
+  <div class="cards">
+    <a href="research.html"><div class="t">Research Experience &rarr;</div>
+      <div class="d">Congestion pricing spillovers, OD flow clusters, congestion pricing evaluation, RKHS goodness-of-fit tests</div></a>
+    <a href="projects.html"><div class="t">Project Experience &rarr;</div>
+      <div class="d">US crash data atlas, bus speed estimation, portfolio optimization</div></a>
   </div>
 
   <footer>Last updated: November 2026</footer>
