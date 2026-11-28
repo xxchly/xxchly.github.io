@@ -1,10 +1,4 @@
 <!doctype html>
-<!-- Purpose: page template of figures/toll_explorer__E0063.html: the explorer of quantities 1-3 for the final setting
-     (four modes, MS56 / E0060) with a travel-mode switch (approved draft from scratch/final_explorer, 2026-11-21)
-     Inputs: none (build_explorer.py inserts the geometry and the compressed data of each mode at the two placeholders)
-     Outputs: none
-     Aligned with the procedure report (user, 2026-11-21): OD pair terminology, report group names and quantity names,
-     quantity 3 in percentage points of the rides of the mode, Multilevel SDM-DiD, RdBu colours, serif type, no Staten Island. -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -449,9 +443,9 @@ async function loadMode(m) {   // decompress the embedded data of one travel mod
   return (CACHE[m] = JSON.parse(txt));
 }
 function subtitle(d) {
-  return `${GEO.mode_labels[tmode]}: Multilevel SDM-DiD (E0060), 2024-2026, \u03b2\u2081 = ${d.b1}. Cells that fail the ` +
-    `parallel-trends check (E0062) are replaced (option 1): ${d.failed.length ? d.failed.join("; ") : "none"}. ` +
-    `Plug-in values at the posterior means; 95% intervals from 300 of the 2000 joint draws. Staten Island excluded. Run E0063.`;
+  return `${GEO.mode_labels[tmode]}: Multilevel SDM-DiD, 2024-2026, \u03b2\u2081 = ${d.b1}. Cells that fail the ` +
+    `parallel-trends check are replaced: ${d.failed.length ? d.failed.join("; ") : "none"}. ` +
+    `Plug-in values at the posterior means; 95% intervals from 300 of the 2000 joint draws. Staten Island excluded.`;
 }
 const tdiv = document.getElementById("tmode");
 async function switchMode(m) {
